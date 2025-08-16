@@ -30,6 +30,7 @@ Thumbs.db
 .anchor/
 test-ledger/
 *.keypair.json
+.house-wallet.json
 
 # Logs
 logs
