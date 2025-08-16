@@ -7,7 +7,15 @@ const app = express();
 const PORT = 3001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://jetsubtc.github.io',
+        'http://localhost:3000',
+        'http://localhost:5000',
+        'https://coinflip.jetsubtc.vercel.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Solana connection
