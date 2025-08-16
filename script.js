@@ -7,7 +7,7 @@ const GAME_CONFIG = {
     MIN_BET: 0.1,
     MAX_BET: 1,
     BET_OPTIONS: [0.1, 0.2, 0.5, 1],
-    HOUSE_SERVER: 'http://localhost:3001', // Backend server URL
+    HOUSE_SERVER: 'https://mute-caprice-jetsu-954fe388.koyeb.app', // Backend server URL
     SOL_DECIMALS: 9, // 1 SOL = 1,000,000,000 lamports
     DEMO_MODE: false // Real transactions with backend payouts
 };
