@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
     origin: [
         'https://jetsubtc.github.io',
+        'https://coinflip.doggogorb.xyz',
         'http://localhost:3000',
         'http://localhost:5000',
         'https://coinflip.jetsubtc.vercel.app'
