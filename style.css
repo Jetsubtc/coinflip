@@ -1622,6 +1622,27 @@ body {
     .stat-content p {
         font-size: 1.5rem;
     }
+    
+    /* Mobile Touch Optimizations */
+    .btn, .bet-option, .coin-option {
+        min-height: 44px; /* iOS touch target minimum */
+        touch-action: manipulation;
+    }
+    
+    .wallet-option {
+        min-height: 50px;
+        touch-action: manipulation;
+    }
+    
+    /* Mobile Wallet Modal */
+    .wallet-modal-content {
+        width: 90%;
+        max-height: 85vh;
+    }
+    
+    .wallet-list {
+        max-height: 350px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2144,5 +2165,76 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    /* Mobile Wallet Modal */
+    .wallet-modal-content {
+        width: 95%;
+        max-height: 90vh;
+        margin: 20px;
+    }
+    
+    .wallet-modal-header {
+        padding: 1rem;
+    }
+    
+    .wallet-modal-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .wallet-modal-body {
+        padding: 1.5rem;
+    }
+    
+    .wallet-option {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .wallet-icon {
+        font-size: 1.2rem;
+        width: 25px;
+    }
+    
+    /* Mobile Header */
+    .header {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .logo-image {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    /* Mobile Game Interface */
+    .betting-interface {
+        padding: var(--spacing-lg);
+    }
+    
+    .coin-options {
+        gap: var(--spacing-md);
+    }
+    
+    .coin-option {
+        min-width: 140px;
+        padding: var(--spacing-md);
+    }
+    
+    /* Mobile Success Message */
+    .connection-success {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+    }
+    
+    .success-message {
+        min-width: auto;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
