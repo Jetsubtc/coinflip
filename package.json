@@ -1,0 +1,33 @@
+{
+  "name": "doggo-coin-flip",
+  "version": "1.0.0",
+  "description": "A Solana-based coin flip game with automatic payouts",
+  "main": "server.js",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html --host=localhost",
+    "server": "node server.js",
+    "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "setup": "node setup.js",
+    "install-deps": "npm install && npm install --prefix program"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "@solana/web3.js": "^1.87.6",
+    "bs58": "^5.0.0",
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "solana",
+    "blockchain",
+    "gaming",
+    "coin-flip",
+    "web3"
+  ],
+  "author": "Doggo Coin Flip Team",
+  "license": "MIT"
+}

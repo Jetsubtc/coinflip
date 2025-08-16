@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the future of decentralized gaming with Doggo Coin Flip - the premium Solana-based coin flip game with provably fair results and instant rewards.">
+    <meta name="keywords" content="doggo coin flip, solana, blockchain, crypto gaming, provably fair">
+    <meta name="author" content="Doggo Coin Flip Team">
+    <meta property="og:title" content="Doggo Coin Flip - Premium Casino Game">
+    <meta property="og:description" content="Experience the future of decentralized gaming with our premium coin flip game">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="images/loading.png">
+    <title>Doggo Coin Flip - Premium Casino Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/loading.png">
+    <link rel="apple-touch-icon" href="images/loading.png">
+</head>
+<body>
+    <!-- 🎨 ULTRA DYNAMIC ANIMATED BACKGROUND -->
+    <div id="particles-js" aria-hidden="true"></div>
+    <div class="animated-bg-element"></div>
+    <div class="animated-bg-element"></div>
+    <div class="animated-bg-element"></div>
+    <div class="dynamic-line"></div>
+    <div class="dynamic-line"></div>
+    <div class="dynamic-line"></div>
+    
+    <!-- Message Display -->
+    <div id="message" class="message" style="display: none;"></div>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo" role="img" aria-label="Doggo Coin Flip Logo">
+                <img src="images/loading.png" alt="Doggo Coin Flip Logo" class="logo-image" loading="lazy">
+                <span>Doggo Coin Flip</span>
+            </div>
+            <nav class="wallet-section" role="navigation">
+                <div id="balanceDisplay" class="wallet-info" style="display: none;" role="status" aria-live="polite">
+                    <div class="balance" aria-label="Wallet Balance">
+                        <i class="fas fa-wallet" aria-hidden="true"></i>
+                        <span id="balanceAmount">0 SOL</span>
+                    </div>
+                    <div class="address" aria-label="Wallet Address">
+                        <span id="walletAddress">Loading...</span>
+                    </div>
+                </div>
+
+                <button id="connectWalletBtn" class="btn btn-primary" aria-label="Connect Wallet">
+                    <i class="fas fa-plug" aria-hidden="true"></i>
+                    Connect Wallet
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Network Alert -->
+    <div id="network-alert" class="network-alert hidden" role="alert" aria-live="assertive">
+        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+        <span>Please switch to Solana Devnet for testing</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section id="welcome-section" class="welcome-section" aria-labelledby="welcome-title">
+                <div class="welcome-content">
+                    <h1 id="welcome-title">Welcome to Doggo Coin Flip</h1>
+                    <p>Experience the future of decentralized gaming with our premium coin flip game powered by Solana blockchain technology</p>
+                    <div class="features" role="list">
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <span>Provably Fair</span>
+                        </div>
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                            <span>Instant Results</span>
+                        </div>
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-coins" aria-hidden="true"></i>
+                            <span>SOL Rewards</span>
+                        </div>
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            <span>Secure & Transparent</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Section -->
+            <section id="game-section" class="game-section" aria-labelledby="game-title">
+                <div class="game-container">
+                    <!-- Betting Interface -->
+                    <div class="betting-interface" role="form" aria-labelledby="betting-title">
+                        <h2 id="betting-title">Place Your Bet</h2>
+                        
+                        <!-- Bet Amount Selection -->
+                        <div class="bet-amount-section">
+                            <label>Select Bet Amount (SOL)</label>
+                            <div class="bet-options" role="group" aria-label="Bet amount selection">
+                                <button id="bet0.1" class="bet-option" data-amount="0.1" aria-label="Bet 0.1 SOL">
+                                    <span class="bet-amount">0.1</span>
+                                    <span class="bet-label">SOL</span>
+                                </button>
+                                <button id="bet0.2" class="bet-option" data-amount="0.2" aria-label="Bet 0.2 SOL">
+                                    <span class="bet-amount">0.2</span>
+                                    <span class="bet-label">SOL</span>
+                                </button>
+                                <button id="bet0.5" class="bet-option" data-amount="0.5" aria-label="Bet 0.5 SOL">
+                                    <span class="bet-amount">0.5</span>
+                                    <span class="bet-label">SOL</span>
+                                </button>
+                                <button id="bet1" class="bet-option" data-amount="1" aria-label="Bet 1 SOL">
+                                    <span class="bet-amount">1</span>
+                                    <span class="bet-label">SOL</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coin Selection -->
+                        <div class="coin-selection">
+                            <h3>Choose Your Side</h3>
+                            <div class="coin-options" role="group" aria-label="Coin side selection">
+                                <button id="heads-btn" class="coin-option" data-side="heads" aria-label="Choose Heads">
+                                    <div class="coin-face" aria-hidden="true">
+                                        <i class="fas fa-dog"></i>
+                                    </div>
+                                    <span>Heads</span>
+                                </button>
+                                <button id="tails-btn" class="coin-option" data-side="tails" aria-label="Choose Tails">
+                                    <div class="coin-face" aria-hidden="true">
+                                        <i class="fas fa-bone"></i>
+                                    </div>
+                                    <span>Tails</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Flip Button -->
+                        <button id="flipCoinBtn" class="btn btn-flip" disabled aria-label="Flip the coin">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            Flip Coin
+                        </button>
+                    </div>
+
+                    <!-- Coin Animation Area -->
+                    <div class="coin-animation-area" aria-live="polite" aria-label="Coin flip animation area">
+                        <div id="coin" class="coin" role="img" aria-label="Coin">
+                            <div class="coin-side coin-front" aria-hidden="true">
+                                <i class="fas fa-dog"></i>
+                            </div>
+                            <div class="coin-side coin-back" aria-hidden="true">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                        </div>
+                        <div id="result" class="result" style="display: none;" role="status" aria-live="assertive">
+                            <h3 id="result-text"></h3>
+                            <div id="result-amount" class="result-amount"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game History -->
+            <section class="history-section" aria-labelledby="history-title">
+                <h2 id="history-title">Recent Games</h2>
+                <div id="game-history" class="game-history" role="list" aria-label="Game history">
+                    <div class="history-placeholder">
+                        <i class="fas fa-history" aria-hidden="true"></i>
+                        <p>No games played yet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leaderboard -->
+            <section class="leaderboard-section" aria-labelledby="leaderboard-title">
+                <h2 id="leaderboard-title">Top Winners</h2>
+                <div id="leaderboard" class="leaderboard" role="list" aria-label="Leaderboard">
+                    <div class="leaderboard-placeholder">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <p>Leaderboard will appear here</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section" aria-labelledby="stats-title">
+                <h2 id="stats-title">Game Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Games</h3>
+                            <p id="total-games">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-percentage" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Win Rate</h3>
+                            <p id="win-rate">0%</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Winnings</h3>
+                            <p id="total-winnings">0 SOL</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Current Streak</h3>
+                            <p id="current-streak">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Doggo Coin Flip</h3>
+                    <p>Experience the future of decentralized gaming with our premium Solana-based coin flip game.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#game-section">Play Game</a></li>
+                        <li><a href="#history-title">Game History</a></li>
+                        <li><a href="#leaderboard-title">Leaderboard</a></li>
+                        <li><a href="#stats-title">Statistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/Doggo_Gorb" target="_blank" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://discord.gg/WGaaW9RCGR" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.doggogorb.xyz" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="https://www.doggogorb.xyz" target="_blank" aria-label="Website"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Doggo Coinflip.<br>All rights reserved<br>Built with ❤️ & Gorbagana Chain.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <!-- Solana Wallet Adapter -->
+    <script src="https://unpkg.com/@solana/wallet-adapter-base@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/wallet-adapter-wallets@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/wallet-adapter-utils@latest/lib/index.iife.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
