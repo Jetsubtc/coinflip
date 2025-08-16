@@ -4,7 +4,7 @@ const { Connection, PublicKey, Transaction, SystemProgram, Keypair } = require('
 const bs58 = require('bs58');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
@@ -218,6 +218,20 @@ app.get('/api/health', (req, res) => {
         status: 'healthy',
         houseWallet: houseWallet.publicKey.toString(),
         gameState
+    });
+});
+
+// Root endpoint for Koyeb health check
+app.get('/', (req, res) => {
+    res.json({
+        status: 'Doggo Coin Flip Backend is running!',
+        houseWallet: houseWallet.publicKey.toString(),
+        endpoints: {
+            health: '/api/health',
+            houseWallet: '/api/house-wallet',
+            processGame: '/api/process-game',
+            stats: '/api/stats'
+        }
     });
 });
 

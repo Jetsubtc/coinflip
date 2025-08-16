@@ -1,0 +1,25 @@
+name: doggo-coinflip-backend
+service:
+  name: doggo-coinflip-backend
+  type: web
+  env:
+    - name: NODE_ENV
+      value: production
+    - name: HOUSE_WALLET_PRIVATE_KEY
+      value: EB1DLCkwHc2S41i5L8sRbyjw8DHEpUXFv6jUes2qEcGedDsMznyRStNozkZj8Bab6tLBZXnhJUqbjXDykeSHydV
+  ports:
+    - port: 3001
+      protocol: http
+  routes:
+    - path: /
+      protocol: http
+  healthcheck:
+    path: /api/health
+    port: 3001
+    interval: 30s
+    timeout: 10s
+    retries: 3
+  build:
+    builder: nodejs
+    buildCommand: npm install
+    startCommand: npm start
